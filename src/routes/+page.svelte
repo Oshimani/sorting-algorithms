@@ -1,11 +1,11 @@
 <script lang="ts">
   import Bubblesort from "$lib/bubblesort.component.svelte";
   import Minsort from "$lib/minsort.component.svelte";
-  import { generateItems } from "$lib/utils";
+  import { generateItems, NUMBER_OF_ITEMS } from "$lib/utils";
 
   let isRunning = false;
 
-  let items = generateItems(20);
+  let items = generateItems(NUMBER_OF_ITEMS);
   let itemsSorted = [...items].sort((a, b) => {
     if (a.value > b.value) return 1;
     return -1;
@@ -29,13 +29,13 @@
 </div>
 
 <div class="flex gap-8 w-full justify-center">
-  <Bubblesort items={[...itemsSorted]} bind:bubbleSort={start[0]} />
-  <Minsort items={[...itemsSorted]} bind:minSort={start[1]} />
+  <Bubblesort items={[...itemsSorted]} bind:bubbleSort={start[2]} />
+  <Minsort items={[...itemsSorted]} bind:minSort={start[3]} />
 </div>
 
 <div class="flex gap-8 w-full justify-center">
-  <Bubblesort items={[...itemsReverted]} bind:bubbleSort={start[0]} />
-  <Minsort items={[...itemsReverted]} bind:minSort={start[1]} />
+  <Bubblesort items={[...itemsReverted]} bind:bubbleSort={start[4]} />
+  <Minsort items={[...itemsReverted]} bind:minSort={start[5]} />
 </div>
 
 <div class="flex w-full justify-center mt-8">
