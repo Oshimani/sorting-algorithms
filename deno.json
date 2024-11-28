@@ -1,0 +1,7 @@
+{
+  "fmt": {
+    "lineWidth": 80,
+    "include": ["**/*.svelte"]
+  },
+  "unstable": ["fmt-component"]
+}
