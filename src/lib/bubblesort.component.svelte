@@ -9,6 +9,9 @@
   let currentIndex: number;
   let sortedIndices: number[] = [];
 
+  const getSortedIndices = (index: number) =>
+    Array.from({ length: items.length - index }, (_, i) => items.length - i);
+
   export const bubbleSort = () => {
     let i = 0;
     let j = 0;
@@ -28,7 +31,7 @@
           j = 0;
           i++;
         }
-        sortedIndices.push(items.length - 1 - i);
+        sortedIndices = getSortedIndices(items.length - 1 - i);
         setTimeout(sortStep, ANIMATION_DURATION); // Schedule the next step
       }
     }

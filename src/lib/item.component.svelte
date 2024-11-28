@@ -12,4 +12,4 @@
   class:!bg-blue-500={highlight}
   class:!bg-green-500={isCurrent}
   class:!bg-orange-700={isSorted}
-  style="height:{size*4}px; transition-duration:{ANIMATION_DURATION}ms"></li>
+  style="height:{size}px; transition-duration:{ANIMATION_DURATION}ms"></li>

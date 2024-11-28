@@ -14,6 +14,9 @@
     let j = 0; // Inner loop
     let minIndex = 0;
 
+    const getSortedIndices = (index: number) =>
+      Array.from({ length: index }, (_, i) => i);
+
     function sortStep() {
       if (i < items.length - 1) {
         if (j < items.length) {
@@ -31,13 +34,13 @@
           items = items; // Trigger Svelte reactivity
 
           // Move to the next position
-          sortedIndices.push(i);
           i++;
           j = i;
           minIndex = i;
 
           setTimeout(sortStep, ANIMATION_DURATION); // Schedule the next iteration
         }
+        sortedIndices = getSortedIndices(i);
       }
     }
 
